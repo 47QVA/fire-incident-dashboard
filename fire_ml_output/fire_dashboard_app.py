@@ -106,15 +106,15 @@ with tabs[0]:
     c[3].metric("Top cause", f["cause_category"].value_counts().idxmax(), delta_color="off")
     a, b = st.columns(2)
     a.plotly_chart(px.pie(f, names="fire_nature", hole=0.55, color="fire_nature", color_discrete_map=NATURE_COLORS,
-                          title="Fires by nature"), use_container_width=True)
+                          title="Fires by nature"), width="stretch")
     b.plotly_chart(px.pie(f, names="severity_level", hole=0.55, color="severity_level", color_discrete_map=SEV_COLORS,
-                          title="Fires by severity"), use_container_width=True)
+                          title="Fires by severity"), width="stretch")
 
 # ---------------- Trends ----------------
 with tabs[1]:
     m = f.groupby(["ym", "fire_nature"]).size().reset_index(name="fires")
     st.plotly_chart(px.bar(m, x="ym", y="fires", color="fire_nature", color_discrete_map=NATURE_COLORS,
-                           title="Monthly fires by nature", labels={"ym": "Month"}), use_container_width=True)
+                           title="Monthly fires by nature", labels={"ym": "Month"}), width="stretch")
     t = f.groupby("ym").size().reset_index(name="fires")
     t["cumulative"] = t["fires"].cumsum(); t["3-mo avg"] = t["fires"].rolling(3, min_periods=1).mean()
     fig = go.Figure()
@@ -122,26 +122,26 @@ with tabs[1]:
     fig.add_scatter(x=t["ym"], y=t["3-mo avg"], name="3-month avg", line=dict(color="#C0392B", width=3))
     fig.add_scatter(x=t["ym"], y=t["cumulative"], name="Cumulative", yaxis="y2", line=dict(dash="dot", color="#2C3E50"))
     fig.update_layout(title="Trend, rolling average & cumulative", yaxis2=dict(overlaying="y", side="right", title="Cumulative"))
-    st.plotly_chart(fig, use_container_width=True)
+    st.plotly_chart(fig, width="stretch")
     s = f.groupby(["ym", "severity_level"]).size().reset_index(name="fires")
     st.plotly_chart(px.line(s, x="ym", y="fires", color="severity_level", markers=True, color_discrete_map=SEV_COLORS,
-                            title="Severity trend"), use_container_width=True)
+                            title="Severity trend"), width="stretch")
 
 # ---------------- Heat maps ----------------
 with tabs[2]:
     hm = f.pivot_table(index="area", columns="month_name", values="incident_id", aggfunc="count", fill_value=0, observed=True)
     hm = hm.loc[hm.sum(axis=1).sort_values(ascending=False).index]
     st.plotly_chart(px.imshow(hm, text_auto=True, color_continuous_scale="Reds", aspect="auto",
-                              title="Area × Month"), use_container_width=True)
+                              title="Area × Month"), width="stretch")
     days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
     hh = f.dropna(subset=["hour"]).pivot_table(index="day_name", columns="hour", values="incident_id",
                                                aggfunc="count", fill_value=0).reindex(days).fillna(0)
     hh = hh.reindex(columns=range(24), fill_value=0)
     st.plotly_chart(px.imshow(hh, text_auto=True, color_continuous_scale="OrRd", aspect="auto",
-                              title="Day of week × Hour of call", labels=dict(x="Hour", y="")), use_container_width=True)
+                              title="Day of week × Hour of call", labels=dict(x="Hour", y="")), width="stretch")
     zc = f.pivot_table(index="zone", columns="cause_category", values="incident_id", aggfunc="count", fill_value=0)
     st.plotly_chart(px.imshow(zc, text_auto=True, color_continuous_scale="YlOrRd", aspect="auto",
-                              title="Zone × Cause"), use_container_width=True)
+                              title="Zone × Cause"), width="stretch")
 
 # ---------------- Response scorecard ----------------
 with tabs[3]:
@@ -162,14 +162,14 @@ with tabs[3]:
     st.subheader("Monthly scorecard")
     st.dataframe(by_m.style.format({"avg_min": "{:.2f}", "median_min": "{:.1f}", "max_min": "{:.0f}",
                                     "pct_within_target": "{:.0%}", "pct_out_before_crew": "{:.0%}", "incidents": "{:.0f}"}),
-                 use_container_width=True)
+                 width="stretch")
     st.subheader("Zone scorecard")
     st.dataframe(by_z.style.format({"avg_min": "{:.2f}", "median_min": "{:.1f}", "max_min": "{:.0f}",
                                     "pct_within_target": "{:.0%}", "pct_out_before_crew": "{:.0%}", "incidents": "{:.0f}"}),
-                 use_container_width=True)
+                 width="stretch")
     eb = f["extinguished_by"].value_counts().reset_index(); eb.columns = ["extinguished_by", "fires"]
     st.plotly_chart(px.bar(eb, x="fires", y="extinguished_by", orientation="h", title="Who put the fire out"),
-                    use_container_width=True)
+                    width="stretch")
 
 # ---------------- Cause analysis ----------------
 with tabs[4]:
@@ -179,15 +179,15 @@ with tabs[4]:
     fig.add_bar(x=p["cause"], y=p["fires"], name="Fires", marker_color="#C0392B")
     fig.add_scatter(x=p["cause"], y=p["cum_pct"], name="Cumulative %", yaxis="y2", mode="lines+markers")
     fig.update_layout(title="Pareto of causes", yaxis2=dict(overlaying="y", side="right", range=[0, 105], ticksuffix="%"))
-    st.plotly_chart(fig, use_container_width=True)
+    st.plotly_chart(fig, width="stretch")
     a, b = st.columns(2)
     a.plotly_chart(px.sunburst(f, path=["zone", "area", "cause_category"], title="Zone → Area → Cause"),
-                   use_container_width=True)
+                   width="stretch")
     fu = f["fuel_type"].value_counts().reset_index(); fu.columns = ["fuel", "fires"]
-    b.plotly_chart(px.bar(fu, x="fires", y="fuel", orientation="h", title="Material burned"), use_container_width=True)
+    b.plotly_chart(px.bar(fu, x="fires", y="fuel", orientation="h", title="Material burned"), width="stretch")
     oa = f.groupby(["operating_activity", "severity_level"]).size().reset_index(name="fires")
     st.plotly_chart(px.bar(oa, x="operating_activity", y="fires", color="severity_level", color_discrete_map=SEV_COLORS,
-                           title="Plant activity at time of fire"), use_container_width=True)
+                           title="Plant activity at time of fire"), width="stretch")
 
 # ---------------- Equipment risk ----------------
 with tabs[5]:
@@ -199,15 +199,15 @@ with tabs[5]:
         st.plotly_chart(px.bar(top[::-1], x="risk_score", y="primary_tag_base", color="risk_band", orientation="h",
                                color_discrete_map=SEV_COLORS, hover_data=["area", "fires", "last_fire"],
                                title="Equipment risk ranking (fires × severity × injuries × recency)"),
-                        use_container_width=True)
+                        width="stretch")
         st.dataframe(er[["risk_rank", "primary_tag_base", "area", "equipment_type", "fires", "avg_severity",
                          "injuries", "first_fire", "last_fire", "days_since_last", "risk_score", "risk_band"]],
-                     use_container_width=True, hide_index=True)
+                     width="stretch", hide_index=True)
     et = f.groupby("equipment_type").agg(fires=("incident_id", "count"),
                                          high=("severity_level", lambda s: (s == "High").sum())).reset_index()
     st.plotly_chart(px.treemap(et, path=["equipment_type"], values="fires", color="high",
                                color_continuous_scale="Reds", title="Fires by equipment type (colour = high severity)"),
-                    use_container_width=True)
+                    width="stretch")
 
 # ---------------- ML ----------------
 with tabs[6]:
@@ -216,12 +216,12 @@ with tabs[6]:
         st.plotly_chart(px.bar(ar.sort_values("risk_score_30d"), x="risk_score_30d", y="area", color="risk_band",
                                orientation="h", color_discrete_map=SEV_COLORS,
                                hover_data=["prob_ml_30d", "prob_hist_30d", "fires_ytd"],
-                               title="Probability of ≥1 fire in the next 30 days"), use_container_width=True)
-        st.dataframe(ar, use_container_width=True, hide_index=True)
+                               title="Probability of ≥1 fire in the next 30 days"), width="stretch")
+        st.dataframe(ar, width="stretch", hide_index=True)
     else:
         st.info("Run the ML notebook to create fire_ml_models/area_risk_30d.csv")
     if "metrics" in ml:
-        st.subheader("Model performance"); st.dataframe(ml["metrics"], use_container_width=True, hide_index=True)
+        st.subheader("Model performance"); st.dataframe(ml["metrics"], width="stretch", hide_index=True)
 
 # ---------------- Reports ----------------
 with tabs[7]:
