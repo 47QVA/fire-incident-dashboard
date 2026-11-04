@@ -1,0 +1,62 @@
+﻿incident_id,incident_date,area,zone,equipment_type,primary_tag_base,cause_category,fire_nature,severity_level,actual_category_model,pred_category_XGBoost,pred_confidence,prob_3RD PARTY,prob_BUILDING,prob_EQUIPMENT,nlp_pred_cause,correct
+FIRE-2026-001,2026-01-01,Loading Gantry,Loading Gantry,Vehicle,,Vehicle fault,3RD PARTY,High,3RD PARTY,3RD PARTY,0.984,0.984,0.006,0.01,Vehicle fault,1
+FIRE-2026-002,2026-01-06,RFCC,Process Unit,Heat exchanger / Heater,113-EE-1002,Pyrophoric,EQUIPMENT,Low,EQUIPMENT,EQUIPMENT,0.958,0.024,0.018,0.958,Other / Unknown,1
+FIRE-2026-003,2026-01-13,MSB,Process Unit,Unknown,,Hot work / Maintenance activity,EQUIPMENT,Low,EQUIPMENT,EQUIPMENT,0.953,0.022,0.025,0.953,Hot work / Maintenance activity,1
+FIRE-2026-004,2026-01-22,MSB,Process Unit,Reactor,152-RB-1001,Flange / Seal leak,EQUIPMENT,Low,EQUIPMENT,EQUIPMENT,0.98,0.013,0.008,0.98,Other / Unknown,1
+FIRE-2026-005,2026-01-24,CDU,Process Unit,Piping / Valve / Line,,Hot work / Maintenance activity,EQUIPMENT,Low,EQUIPMENT,EQUIPMENT,0.958,0.025,0.017,0.958,Other / Unknown,1
+FIRE-2026-006,2026-01-25,MHC,Process Unit,Heat exchanger / Heater,122-EE-1004,Flange / Seal leak,EQUIPMENT,Medium,EQUIPMENT,EQUIPMENT,0.971,0.007,0.021,0.971,Flange / Seal leak,1
+FIRE-2026-007,2026-01-31,MSB,Process Unit,Reactor,,Flange / Seal leak,EQUIPMENT,Low,EQUIPMENT,EQUIPMENT,0.975,0.007,0.019,0.975,Flange / Seal leak,1
+FIRE-2026-008,2026-02-02,Offshore,Offshore,Cable,,Arson / Vandalism / Scavenging,BUSH/SCRAP,Low,BUILDING,BUILDING,0.779,0.042,0.779,0.178,Electrical fault,1
+FIRE-2026-009,2026-02-02,CDU,Process Unit,Vessel / Drum,102-VV-1004,Hot work / Maintenance activity,EQUIPMENT,Medium,EQUIPMENT,EQUIPMENT,0.985,0.004,0.011,0.985,Hot work / Maintenance activity,1
+FIRE-2026-010,2026-02-04,MHC,Process Unit,Heat exchanger / Heater,121-EE-1004,Flange / Seal leak,EQUIPMENT,Low,EQUIPMENT,EQUIPMENT,0.93,0.005,0.064,0.93,Flange / Seal leak,1
+FIRE-2026-011,2026-02-05,RFCC,Process Unit,Pump,112-PA-1014,Hot work / Maintenance activity,EQUIPMENT,Low,EQUIPMENT,EQUIPMENT,0.97,0.005,0.024,0.97,Hot work / Maintenance activity,1
+FIRE-2026-012,2026-02-09,CDU,Process Unit,Piping / Valve / Line,,Flange / Seal leak,EQUIPMENT,Low,EQUIPMENT,BUILDING,0.507,0.017,0.507,0.476,Other / Unknown,0
+FIRE-2026-013,2026-02-13,PPU,Process Unit,Heat exchanger / Heater,171-FD-25001,Electrical fault,EQUIPMENT,Low,EQUIPMENT,EQUIPMENT,0.747,0.008,0.245,0.747,Electrical fault,1
+FIRE-2026-014,2026-02-13,Admin Block,Admin,Domestic appliance,,Cooking / Domestic appliance,BUILDING,Low,BUILDING,BUILDING,0.526,0.057,0.526,0.417,Electrical fault,1
+FIRE-2026-015,2026-02-16,RFCC,Process Unit,Heat exchanger / Heater,112-EE-1008,Hot surface / Soaked insulation,EQUIPMENT,Low,EQUIPMENT,EQUIPMENT,0.971,0.006,0.024,0.971,Hot surface / Soaked insulation,1
+FIRE-2026-016,2026-02-17,RFCC,Process Unit,Pump,112-PA-1006,Hot surface / Soaked insulation,EQUIPMENT,Low,EQUIPMENT,EQUIPMENT,0.91,0.015,0.075,0.91,Hot surface / Soaked insulation,1
+FIRE-2026-017,2026-02-17,RFCC,Process Unit,Unknown,,Dumped material,BUSH/SCRAP,Medium,BUILDING,EQUIPMENT,0.941,0.01,0.049,0.941,Other / Unknown,0
+FIRE-2026-018,2026-02-23,Control Room,Utilities & Power,Electrical panel,,Electrical fault,BUILDING,Low,BUILDING,BUILDING,0.942,0.017,0.942,0.041,Electrical fault,1
+FIRE-2026-019,2026-03-30,RFCC,Process Unit,Turbine / Expander,,Hot surface / Soaked insulation,EQUIPMENT,Low,EQUIPMENT,EQUIPMENT,0.987,0.005,0.008,0.987,Other / Unknown,1
+FIRE-2026-020,2026-03-30,Fertilizer Premises,Third-Party Premises,Vehicle,,Vehicle fault,3RD PARTY,Low,3RD PARTY,3RD PARTY,0.956,0.956,0.03,0.015,Vehicle fault,1
+FIRE-2026-021,2026-04-01,Surge Tank,Tank Farm,Storage tank,,Hot work / Maintenance activity,EQUIPMENT,Low,EQUIPMENT,EQUIPMENT,0.705,0.127,0.168,0.705,Hot work / Maintenance activity,1
+FIRE-2026-022,2026-04-02,MHC,Process Unit,Pump,121-PA-1001,Flange / Seal leak,EQUIPMENT,Medium,EQUIPMENT,EQUIPMENT,0.992,0.004,0.004,0.992,Flange / Seal leak,1
+FIRE-2026-023,2026-04-13,HGU,Process Unit,Heat exchanger / Heater,161-EE-0007,Other / Unknown,EQUIPMENT,Low,EQUIPMENT,EQUIPMENT,0.99,0.005,0.004,0.99,Other / Unknown,1
+FIRE-2026-024,2026-04-16,RFCC,Process Unit,Pump,111-PA-1001,Overheating,EQUIPMENT,Low,EQUIPMENT,EQUIPMENT,0.959,0.007,0.034,0.959,Other / Unknown,1
+FIRE-2026-025,2026-04-28,MHC,Process Unit,Heat exchanger / Heater,121-EE-1005,Other / Unknown,EQUIPMENT,Medium,EQUIPMENT,EQUIPMENT,0.963,0.014,0.023,0.963,Other / Unknown,1
+FIRE-2026-026,2026-05-08,MHC,Process Unit,Heat exchanger / Heater,121-EE-1004,Other / Unknown,EQUIPMENT,Medium,EQUIPMENT,EQUIPMENT,0.985,0.011,0.004,0.985,Flange / Seal leak,1
+FIRE-2026-027,2026-05-11,ITF (Tank Farm),Tank Farm,Cable,,Electrical fault,EQUIPMENT,High,EQUIPMENT,EQUIPMENT,0.952,0.033,0.015,0.952,Other / Unknown,1
+FIRE-2026-028,2026-05-19,ITF (Tank Farm),Tank Farm,Storage tank,716-TT-1601,Lightning strike,EQUIPMENT,High,EQUIPMENT,EQUIPMENT,0.903,0.067,0.029,0.903,Other / Unknown,1
+FIRE-2026-029,2026-05-29,CPP,Utilities & Power,Turbine / Expander,680-FM-1005,Equipment failure / Blast,EQUIPMENT,High,EQUIPMENT,EQUIPMENT,0.811,0.074,0.115,0.811,Other / Unknown,1
+FIRE-2026-030,2026-06-01,MHC,Process Unit,Heat exchanger / Heater,121-EE-1005,Flange / Seal leak,EQUIPMENT,Low,EQUIPMENT,EQUIPMENT,0.993,0.003,0.003,0.993,Flange / Seal leak,1
+FIRE-2026-031,2026-06-02,22K Accommodation,Accommodation,Domestic appliance,,Cooking / Domestic appliance,BUILDING,Medium,BUILDING,BUILDING,0.534,0.061,0.534,0.405,Other / Unknown,1
+FIRE-2026-032,2026-06-04,22K Accommodation,Accommodation,Building structure,,Electrical fault,BUILDING,Low,BUILDING,BUILDING,0.939,0.012,0.939,0.05,Other / Unknown,1
+FIRE-2026-033,2026-06-05,MSB,Process Unit,Unknown,,Other / Unknown,EQUIPMENT,Low,EQUIPMENT,EQUIPMENT,0.981,0.007,0.012,0.981,Other / Unknown,1
+FIRE-2026-034,2026-06-05,22K Accommodation,Accommodation,Unknown,,Electrical fault,BUILDING,Medium,BUILDING,BUILDING,0.914,0.006,0.914,0.079,Other / Unknown,1
+FIRE-2026-035,2026-06-08,MHC,Process Unit,Heat exchanger / Heater,121-EE-1004,Flange / Seal leak,EQUIPMENT,Medium,EQUIPMENT,EQUIPMENT,0.976,0.006,0.018,0.976,Flange / Seal leak,1
+FIRE-2026-036,2026-06-08,RFCC,Process Unit,Turbine / Expander,,Other / Unknown,EQUIPMENT,High,EQUIPMENT,EQUIPMENT,0.991,0.002,0.007,0.991,Other / Unknown,1
+FIRE-2026-037,2026-06-17,Substation,Utilities & Power,Blower / Fan,621-BL-1001,Electrical fault,EQUIPMENT,Low,EQUIPMENT,BUILDING,0.727,0.05,0.727,0.224,Other / Unknown,0
+FIRE-2026-038,2026-06-25,22K Accommodation,Accommodation,Building structure,,Other / Unknown,BUILDING,Medium,BUILDING,EQUIPMENT,0.695,0.088,0.217,0.695,Cooking / Domestic appliance,0
+FIRE-2026-039,2026-06-26,MHC,Process Unit,Heat exchanger / Heater,121-EE-1004,Other / Unknown,EQUIPMENT,Low,EQUIPMENT,EQUIPMENT,0.992,0.002,0.006,0.992,Flange / Seal leak,1
+FIRE-2026-040,2026-06-28,ITF (Tank Farm),Tank Farm,Storage tank,716-TT-1601,Lightning strike,EQUIPMENT,Medium,EQUIPMENT,EQUIPMENT,0.878,0.045,0.077,0.878,Other / Unknown,1
+FIRE-2026-041,2026-06-29,ITF (Tank Farm),Tank Farm,Storage tank,712-TT-1202,Other / Unknown,EQUIPMENT,Low,EQUIPMENT,EQUIPMENT,0.774,0.057,0.169,0.774,Other / Unknown,1
+FIRE-2026-042,2026-07-03,MHC,Process Unit,Heat exchanger / Heater,121-EE-1004,Flange / Seal leak,EQUIPMENT,Low,EQUIPMENT,EQUIPMENT,0.995,0.002,0.003,0.995,Flange / Seal leak,1
+FIRE-2026-043,2026-07-04,HGU,Process Unit,Heat exchanger / Heater,,Flange / Seal leak,EQUIPMENT,Medium,EQUIPMENT,EQUIPMENT,0.993,0.002,0.005,0.993,Flange / Seal leak,1
+FIRE-2026-044,2026-07-04,MHC,Process Unit,Heat exchanger / Heater,121-EE-1004,Flange / Seal leak,EQUIPMENT,Low,EQUIPMENT,EQUIPMENT,0.988,0.004,0.008,0.988,Flange / Seal leak,1
+FIRE-2026-045,2026-07-08,22K Accommodation,Accommodation,Cable,,Arson / Vandalism / Scavenging,BUILDING,Low,BUILDING,BUILDING,0.936,0.008,0.936,0.056,Other / Unknown,1
+FIRE-2026-046,2026-07-11,CNG Dispenser,Loading Gantry,Piping / Valve / Line,,Vent release,EQUIPMENT,Low,EQUIPMENT,EQUIPMENT,0.83,0.058,0.112,0.83,Other / Unknown,1
+FIRE-2026-047,2026-07-13,MHC,Process Unit,Heat exchanger / Heater,121-EE-1004,Flange / Seal leak,EQUIPMENT,Low,EQUIPMENT,EQUIPMENT,0.982,0.002,0.015,0.982,Flange / Seal leak,1
+FIRE-2026-048,2026-07-14,22K Accommodation,Accommodation,Domestic appliance,,Cooking / Domestic appliance,BUILDING,Low,BUILDING,BUILDING,0.803,0.038,0.803,0.159,Other / Unknown,1
+FIRE-2026-049,2026-07-14,22K Accommodation,Accommodation,Electrical panel,,Electrical fault,BUILDING,Low,BUILDING,BUILDING,0.968,0.003,0.968,0.029,Other / Unknown,1
+FIRE-2026-050,2026-07-18,MHC,Process Unit,Heat exchanger / Heater,121-EE-1004,Flange / Seal leak,EQUIPMENT,Low,EQUIPMENT,EQUIPMENT,0.98,0.003,0.017,0.98,Flange / Seal leak,1
+FIRE-2026-051,2026-07-25,MSB,Process Unit,Heat exchanger / Heater,152-EE-1008,Other / Unknown,EQUIPMENT,Medium,EQUIPMENT,EQUIPMENT,0.992,0.005,0.003,0.992,Other / Unknown,1
+FIRE-2026-052,2026-07-25,MSB,Process Unit,Heat exchanger / Heater,152-EU-1001,Flange / Seal leak,EQUIPMENT,High,EQUIPMENT,EQUIPMENT,0.993,0.004,0.004,0.993,Flange / Seal leak,1
+FIRE-2026-053,2026-08-02,Substation,Utilities & Power,Pump,155-PA-1012,Electrical fault,EQUIPMENT,Medium,EQUIPMENT,EQUIPMENT,0.809,0.064,0.126,0.809,Other / Unknown,1
+FIRE-2026-054,2026-08-14,MHC,Process Unit,Compressor,121-KA-1002,Flange / Seal leak,EQUIPMENT,High,EQUIPMENT,EQUIPMENT,0.993,0.004,0.004,0.993,Flange / Seal leak,1
+FIRE-2026-055,2026-08-21,Main Gate,Gate & Roads,Vehicle,,Vehicle fault,3RD PARTY,Medium,3RD PARTY,3RD PARTY,0.827,0.827,0.012,0.162,Vehicle fault,1
+FIRE-2026-056,2026-08-31,Cooling Tower,Utilities & Power,Pump,634-PA-1001,Other / Unknown,EQUIPMENT,Medium,EQUIPMENT,EQUIPMENT,0.854,0.087,0.059,0.854,Other / Unknown,1
+FIRE-2026-057,2026-08-31,Loading Gantry,Loading Gantry,Vehicle,,Vehicle fault,3RD PARTY,Low,3RD PARTY,3RD PARTY,0.877,0.877,0.007,0.115,Vehicle fault,1
+FIRE-2026-058,2026-09-06,10K Accommodation,Accommodation,Building structure,,Electrical fault,BUILDING,High,BUILDING,EQUIPMENT,0.571,0.106,0.323,0.571,Electrical fault,0
+FIRE-2026-059,2026-09-10,RFCC,Process Unit,Heat exchanger / Heater,113-EE-1021,Hot work / Maintenance activity,EQUIPMENT,High,EQUIPMENT,EQUIPMENT,0.995,0.003,0.002,0.995,Other / Unknown,1
+FIRE-2026-060,2026-09-17,Offshore,Offshore,Cable,,Electrical fault,EQUIPMENT,Low,EQUIPMENT,BUILDING,0.681,0.075,0.681,0.243,Other / Unknown,0
+FIRE-2026-061,2026-10-02,Main Gate,Gate & Roads,Vehicle,,Vehicle fault,3RD PARTY,Medium,3RD PARTY,3RD PARTY,0.944,0.944,0.008,0.048,Other / Unknown,1
